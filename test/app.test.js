@@ -2,7 +2,7 @@ const instance = require('../index');
 
 instance.Listener.listen("dap", {
     "DAP2COT": data => {
-        console.log("FFFFIFIFIFIFIF"+data.toString());
+        console.log(data.toString());
     }
 })
 

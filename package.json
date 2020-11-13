@@ -1,5 +1,5 @@
 {
-  "name": "txrouter",
+  "name": "@iopanda/txrouter",
   "description": "Event based transaction handler working with RabbitMQ",
   "version": "0.0.1",
   "main": "index.js",
@@ -20,7 +20,7 @@
     "domain",
     "event"
   ],
-  "author": "WSE@IBM",
+  "author": "iopanda",
   "license": "Apache-2.0",
   "dependencies": {
     "amqplib": "^0.6.0",
