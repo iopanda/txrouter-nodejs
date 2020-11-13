@@ -1,0 +1,33 @@
+{
+  "name": "txrouter",
+  "description": "Event based transaction handler working with RabbitMQ",
+  "version": "0.0.1",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "distributed",
+    "transaction",
+    "rabbitmq",
+    "domain",
+    "event"
+  ],
+  "author": "WSE@IBM",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "amqplib": "^0.6.0",
+    "has-value": "^2.0.2"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "dotyaml": "^1.0.0"
+  }
+}
