@@ -1,7 +1,7 @@
 {
-  "name": "@iopanda/txrouter",
+  "name": "@ibm_wse/txrouter",
   "description": "Event based transaction handler working with RabbitMQ",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "index.js",
   "directories": {
     "test": "test"

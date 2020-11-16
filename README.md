@@ -11,22 +11,22 @@ TxRouter is a module which allow you pass domain events between multiple service
 #### Install
 
 ```sh
-npm install @iopanda/txrouter --save
+npm install @ibm_wse/txrouter --save
 ```
 
 #### Configuration
 
 This module is working on RabbitMQ. You need to put your connection information into environment variables. The list of the environment variables list below:
 
-**mandatory**
+**Mandatory**
 - **TXROUTER.APPID**: The application ID provided by TxRouter Services
 - **TXROUTER.PROTOCOL**: The protocal of RabbitMQ provided, now we support *amqp* and *amqps*
 - **TXROUTER.HOST**: Host name of RabbitMQ
-- **TXROUTER.PORT: Port for communication with selected protocol
+- **TXROUTER.PORT**: Port for communication with selected protocol
 - **TXROUTER.USERNAME**: Username (provided by TxRouter Services)
 - **TXROUTER.PASSWORD**: Password (provided by TxRouter Services)
 
-**optional**
+**Optional**
 
 Below environment variables required only for *amqps* protocol (with ssl/tls security)
 - **TXROUTER.CERT.CLIENT**: Client certificate
