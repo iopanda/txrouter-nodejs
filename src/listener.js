@@ -5,14 +5,14 @@ const conf = require('../conf/config');
 const Listener = {
     mapper: {},
     listen: function (appid, structure) {
-        if(!has(this.mapper, appid)){
-            this.mapper[appid] = {};
+        if(!has(Listener.mapper, appid)){
+            Listener.mapper[appid] = {};
         }
         for(let topic in structure){
-            if(has(this.mapper[appid], topic)){
+            if(has(Listener.mapper[appid], topic)){
                 throw new Error(`duplicate declared application topics: app=${appid}, topic=${topic}.`);
             }else{
-                this.mapper[appid][topic] = structure[topic];
+                Listener.mapper[appid][topic] = structure[topic];
             }
         }
     }

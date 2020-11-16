@@ -37,14 +37,14 @@ Below environment variables required only for *amqps* protocol (with ssl/tls sec
 #### As a publisher
 
 ```javascript
-const txrouter = require('txrouter');
+const txrouter = require('@/ibm_wse/txrouter');
 txrouter.send(event_id, message);
 ```
 
 #### As a consumer
 
 ```javascript
-const txrouter = require('txrouter');
+const txrouter = require('@/ibm_wse/txrouter');
 txrouter.listen("target_app_id", {
         "event_id": msg => {
             // handler
