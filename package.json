@@ -1,7 +1,7 @@
 {
   "name": "@ibm_wse/txrouter",
   "description": "Event based transaction handler working with RabbitMQ",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "index.js",
   "directories": {
     "test": "test"

@@ -28,8 +28,10 @@ const Listener = {
                     has(Listener.mapper, msg.properties.headers.from) &&
                     has(Listener.mapper[msg.properties.headers.from], msg.properties.headers.topic)
                 ){
-                    Listener.mapper[msg.properties.headers.from][msg.properties.headers.topic](msg.content);
-                    ch.ack(msg);
+                    var rs = Listener.mapper[msg.properties.headers.from][msg.properties.headers.topic](msg.content, msg.properties.headers.traceId);
+                    if(rs === true){
+                        ch.ack(msg);
+                    }
                 }
             }))
         ).catch(console.warn)
