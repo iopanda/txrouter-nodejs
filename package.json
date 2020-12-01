@@ -7,7 +7,7 @@
     "test": "test"
   },
   "bin": {
-    "txrouter": "bin/txrouter"
+    "txctl": "bin/index.js"
   },
   "scripts": {
     "test": "npm run test"
@@ -27,12 +27,15 @@
   "license": "Apache-2.0",
   "dependencies": {
     "amqplib": "^0.6.0",
+    "axios": "^0.21.0",
     "commander": "^6.2.0",
     "crypto-js": "^4.0.0",
     "del": "^6.0.0",
     "has-value": "^2.0.2",
+    "https": "^1.0.0",
     "input": "^1.0.1",
     "js-base64": "^3.6.0",
+    "pjson": "^1.0.9",
     "yaml": "^1.10.0"
   },
   "devDependencies": {
