@@ -31,6 +31,7 @@
     "commander": "^6.2.0",
     "crypto-js": "^4.0.0",
     "del": "^6.0.0",
+    "generate-password": "^1.5.1",
     "has-value": "^2.0.2",
     "https": "^1.0.0",
     "input": "^1.0.1",

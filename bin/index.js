@@ -4,6 +4,7 @@ const { Command } = require('commander');
 const pjson = require('pjson');
 const config = require('./lib/config');
 const init = require('./lib/init');
+const apply = require('./lib/apply');
 
 const program = new Command();
 program.version(pjson.version);
@@ -59,8 +60,14 @@ program
     .command('apply')
     .description('apply configuration')
     .option('-f, --filename <filename>', '')
-    .action((options) => {
-        console.log(options.filename);
+    .action(cmd => {
+        if(cmd.filename){
+            apply(cmd.filename).then(res=>{
+                console.log("Done!");
+            }, rej=>{
+                console.log(rej);
+            })
+        }
     });
 
 program
