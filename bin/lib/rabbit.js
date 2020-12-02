@@ -69,12 +69,12 @@ const templates = {
             "arguments": {}
         }
     },
-    QueueTemplate: (cluster) => {
+    QueueTemplate: () => {
         return {
             "auto_delete": false,
             "durable": true,
             "arguments": {},
-            "node": cluster
+            "node": config.cluster
         }
     },
     BindingTemplate: () => {

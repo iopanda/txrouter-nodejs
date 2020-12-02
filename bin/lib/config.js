@@ -26,6 +26,7 @@ async function createConfig() {
         protocol: await input.select('Choose the protocol:', ['http', 'https']),
         host: await input.text('host:'),
         port: await input.text('port:'),
+        cluster: await input.text('cluster:'),
         username: Base64.encode(await input.text('username:')),
         password: Base64.encode(await input.password('password:'))
     }
@@ -62,6 +63,7 @@ function loadConfig(){
         protocal: conf.protocal || 'http',
         host: conf.host,
         port: conf.port,
+        cluster: conf.cluster,
         username: Base64.decode(conf.username),
         password: Base64.decode(conf.password)
     }

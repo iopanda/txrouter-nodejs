@@ -1,6 +1,7 @@
-const rabbit = require('./rabbit');
 
 function initTxRouter() {
+    const rabbit = require('./rabbit');
+
     const vhost = 'cpds.tx_router';
     const exchange = 'cpds.tx_router.receiver'
     return new Promise((resolve, reject) => {
