@@ -2,6 +2,7 @@
 
 const { Command } = require('commander');
 const pjson = require('pjson');
+const config = require('./lib/config');
 const init = require('./lib/init');
 
 const program = new Command();
@@ -10,15 +11,19 @@ program.version(pjson.version);
 program
     .command('config').description('config the txctl environment')
     .option('-i, --init', 'init config')
+    .option('-u, --use <config_name>', 'use config')
     .option('-f, --file <file_name>', 'config from file')
     .option('-a, --append <file_name>', 'append a config from file')
+    .option('-l, --list', 'list existed config')
     .option('-s, --show [config]', 'show config details')
     .option('-r, --remove', 'remove a config')
     .action((cmd) => {
         if(cmd.init){
-            init.initConfig();
+            config.initConfig();
         }else if(cmd.file){
             console.log('config-by-file');
+        }else if(cmd.use){
+            config.useConfig(cmd.use)
         }else if(cmd.append){
             console.log('config-append')
         }else if(cmd.show){
@@ -29,6 +34,17 @@ program
             console.log(`unknow option: '${cmd.args.join(' ')}'. please use "txctl config -h" to find the usage.`);
         }
     });
+
+program
+    .command('init').description('init txrouter in rabbitmq').action(cmd => {
+        init.initTxRouter().then(res=>{
+            console.log('TxRouter init done!');
+        }, rej=>{
+            console.log(`Error: ${rej}`)
+        }).catch(err=>{
+            console.log(`Error: ${err}`)
+        })
+    })
 
 program
     .command('get')    

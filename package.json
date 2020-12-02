@@ -36,6 +36,7 @@
     "input": "^1.0.1",
     "js-base64": "^3.6.0",
     "pjson": "^1.0.9",
+    "string.prototype.trim": "^1.2.3",
     "yaml": "^1.10.0"
   },
   "devDependencies": {
