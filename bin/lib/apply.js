@@ -1,5 +1,6 @@
 const fs = require('fs');
 const yaml = require('yaml');
+const { table } = require('table');
 const  generator = require('generate-password');
 
 const naming = require('./naming');
@@ -71,12 +72,13 @@ function applyApplication(obj){
                 userPromise,
                 permissionPromise
             ]).then(res=>{
+                const data = [
+                    ['Username:', username],
+                    ['Password:', password]
+                ];
                 console.log("")
                 console.log(`User has been created for app ${obj.name}:`)
-                console.log("  =================================================")
-                console.log(`   username: ${username}`);
-                console.log(`   password: ${password}`);
-                console.log("  =================================================")
+                console.log(table(data));
                 console.log("")
                 resolve();
             }, rej=>{
@@ -100,13 +102,14 @@ async function applySubscription(obj){
 
     const promiseArray = [];
     obj.subscriptions && obj.subscriptions.forEach(item => {
-        console.log(item);
-        const subscribeTemplate = rabbit.templates.BindingTemplate();
-        subscribeTemplate.arguments['from'] = item.from;
-        subscribeTemplate.arguments['topic'] = item.eventId;
-
-        var subscribePromise = rabbit.bindingExchanges(name.core.vhost, name.core.exchanges.receiver, name.core.exchanges.dispatcher, subscribeTemplate);
-        promiseArray.push(subscribePromise);
+        item.events.forEach(e => {
+            const subscribeTemplate = rabbit.templates.BindingTemplate();
+            subscribeTemplate.arguments['from'] = item.from;
+            subscribeTemplate.arguments['topic'] = e;
+    
+            var subscribePromise = rabbit.bindingExchanges(name.core.vhost, name.core.exchanges.receiver, name.core.exchanges.dispatcher, subscribeTemplate);
+            promiseArray.push(subscribePromise);
+        })
     });
 
     return await Promise.all(promiseArray);

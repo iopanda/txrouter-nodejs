@@ -38,6 +38,7 @@
     "js-base64": "^3.6.0",
     "pjson": "^1.0.9",
     "string.prototype.trim": "^1.2.3",
+    "table": "^6.0.4",
     "yaml": "^1.10.0"
   },
   "devDependencies": {

@@ -5,6 +5,7 @@ const pjson = require('pjson');
 const config = require('./lib/config');
 const init = require('./lib/init');
 const apply = require('./lib/apply');
+const get = require('./lib/get');
 
 const program = new Command();
 program.version(pjson.version);
@@ -48,12 +49,16 @@ program
     })
 
 program
-    .command('get')    
-    .description('get resource list')
-    .command('apps', 'get application list')
-    .command('binds', 'get subscription list')
-    .action(cmd => {
-        
+    .command('get <kind>')
+    .description('get resource list, applications | subscriptions')
+    .action((kind,cmd) => {
+        get(kind).then(res=>{
+            // do nothing
+        }, rej=>{
+            console.log(rej);
+        }).catch(err=>{
+            console.log(err);
+        })
     });
 
 program

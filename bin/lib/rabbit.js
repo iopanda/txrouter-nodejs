@@ -59,6 +59,32 @@ function createPermission(vhost, username, data) {
     return http.put(url, data);
 }
 
+function getOverview(){
+    return http.get(`/api/overview`);
+}
+
+function getClusterName(){
+    return http.get(`/api/cluster-name`);
+}
+
+function getNodes(){
+    return http.get(`/api/nodes`);
+}
+
+function getNode(name){
+    return http.get(`/api/nodes/${name}`);
+}
+
+function getDefinitions(){
+    return http.get(`/api/definitions`);
+}
+
+function getShovels(){
+    return http.get(`/api/shovels`);
+}
+
+
+
 const templates = {
     ExchangeTemplate: (type) => {
         return {
@@ -129,5 +155,7 @@ module.exports = {
     bindingExchangeToQueue: bindingExchangeToQueue,
     createUser: createUser,
     createPermission: createPermission,
-    templates: templates
+    templates: templates,
+    getClusterName: getClusterName,
+    getDefinitions: getDefinitions
 }
