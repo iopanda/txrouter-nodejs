@@ -10,6 +10,11 @@ TxRouter is a module which allow you pass domain events between multiple service
 
 If you have the admin permission on RabbitMQ, you can use the CLI mode to init the environment. But firstly, you need to init your local configuration to connect RabbitMQ.
 
+Install
+```sh
+> npm install -g txrouter
+```
+
 You can find the help document by below command:
 ```sh
 > txctl -h       
