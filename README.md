@@ -2,15 +2,15 @@
 
 Event based distributed transaction solution with RabbitMQ
 
-### Introduction
+## Introduction
 
 TxRouter is a module which allow you pass domain events between multiple services based on RabbitMQ. Before you install this module, please make sure your RabbitMQ has been initialized by *txctl*. 
 
-### Usage as Cli
+## Usage as Cli
 
 If you have the admin permission on RabbitMQ, you can use the CLI mode to init the environment. But firstly, you need to init your local configuration to connect RabbitMQ.
 
-Install
+### Install
 ```sh
 > npm install -g txrouter
 ```
@@ -33,7 +33,7 @@ Commands:
   help [command]    display help for command
 ```
 
-Step 1: init configuration to access RabbitMQ
+### Step 1: init configuration to access RabbitMQ
 ```sh
 # init configuration
 > txctl config -i
@@ -48,19 +48,19 @@ Step 1: init configuration to access RabbitMQ
 Done!
 ```
 
-Step 2: use the environment in configuration:
+### Step 2: use the environment in configuration:
 ```sh
 > txctl config -u default
 Done!
 ```
 
-Step 3: init RabbitMQ by cli
+### Step 3: init RabbitMQ by cli
 ```sh
 > txctl init
 TxRouter init done!
 ```
 
-Step 4: prepare resource definition files
+### Step 4: prepare resource definition files
 
 Now you have already created the basic structure in RabbitMQ. Next you need to prepare the YAML files which defined applications and subscriptions.
 
@@ -93,13 +93,13 @@ subscriptions:
       - ORDER_CREATE_SUCCESS
 ```
 
-Step 5: create resources by cli
+### Step 5: create resources by cli
 ```sh
 > txctl apply -f app.yaml
 Done!
 ```
 
-Step 6: list resources by cli
+### Step 6: list resources by cli
 ```sh
 > txctl get applications
 ╔══════════════╗
@@ -121,15 +121,15 @@ Step 6: list resources by cli
 ╚══════════╧═════════════╧═══════════════════════╝
 ```
 
-### Usage as SDK
+## Usage as SDK
 
-#### Install
+### Install
 
 ```sh
 npm install @ibm_wse/txrouter --save
 ```
 
-#### Configuration
+### Configuration
 
 This module is working on RabbitMQ. You need to put your connection information into environment variables. The list of the environment variables list below:
 
@@ -149,14 +149,14 @@ Below environment variables required only for *amqps* protocol (with ssl/tls sec
 - **TXROUTER.CERT.PASSPHRASE**: Passparase of client key
 - **TXROUTER.CERT.CA**: Server certificate, commonly provided by RabbitMQ provider
 
-#### As a publisher
+### As a publisher
 
 ```javascript
 const txrouter = require('@/ibm_wse/txrouter');
 txrouter.send(event_id, message);
 ```
 
-#### As a consumer
+### As a consumer
 
 ```javascript
 const txrouter = require('@/ibm_wse/txrouter');
