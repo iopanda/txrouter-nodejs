@@ -1,11 +1,8 @@
 const fs = require('fs');
-const path = require('path');
 const yaml = require('yaml');
 const  generator = require('generate-password');
 
 const naming = require('./naming');
-const config = require('./config');
-const { bindingExchanges } = require('./rabbit');
 
 function passwordGenerator(){
     return generator.generate({
