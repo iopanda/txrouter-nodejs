@@ -60,7 +60,7 @@ function loadConfig(){
     }
 
     return {
-        protocal: conf.protocal || 'http',
+        protocol: conf.protocol || 'http',
         host: conf.host,
         port: conf.port,
         cluster: conf.cluster,

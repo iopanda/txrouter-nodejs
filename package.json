@@ -1,7 +1,7 @@
 {
   "name": "@ibm_wse/txrouter",
   "description": "Event based transaction handler working with RabbitMQ",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -26,6 +26,7 @@
   "author": "iopanda",
   "license": "Apache-2.0",
   "dependencies": {
+    "@ibm_wse/txrouter": "^0.1.2",
     "amqplib": "^0.6.0",
     "axios": "^0.21.0",
     "commander": "^6.2.0",

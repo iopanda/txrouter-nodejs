@@ -135,7 +135,7 @@ This module is working on RabbitMQ. You need to put your connection information 
 
 **Mandatory**
 - **TXROUTER.APPID**: The application ID provided by TxRouter Services
-- **TXROUTER.PROTOCOL**: The protocal of RabbitMQ provided, now we support *amqp* and *amqps*
+- **TXROUTER.PROTOCOL**: The protocol of RabbitMQ provided, now we support *amqp* and *amqps*
 - **TXROUTER.HOST**: Host name of RabbitMQ
 - **TXROUTER.PORT**: Port for communication with selected protocol
 - **TXROUTER.USERNAME**: Username (provided by TxRouter Services)

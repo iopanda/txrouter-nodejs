@@ -2,7 +2,7 @@ const https = require('https');
 const axios = require('axios');
 const config = require('./config').loadConfig();
 
-const URI = `${config.protocal}://${config.host}:${config.port}`;
+const URI = `${config.protocol}://${config.host}:${config.port}`;
 
 const http = axios.create({
     baseURL: URI,
